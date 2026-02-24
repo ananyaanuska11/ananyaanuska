@@ -104,6 +104,7 @@
       pointer-events: none;
       transition: opacity 0.25s, transform 0.25s;
       box-shadow: 0 12px 40px rgba(42,31,20,0.1);
+      z-index: 1000;
     }
 
     .nav-item:hover .dropdown {
@@ -375,6 +376,28 @@
     }
     .art-item:hover .art-overlay { opacity: 1; }
 
+    /* POEM FULL PAGE */
+    .poem-page { max-width: 620px; }
+    .poem-full-text { margin-top: 1rem; }
+    .poem-full-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 2.2;
+      color: var(--sepia);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    .poem-sig {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--rust);
+      margin-top: 1rem;
+    }
+
+    .coming-soon-entry { border: none !important; padding: 3rem 0 !important; }
+    .coming-soon-text { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--faded); font-size: 1.1rem; letter-spacing: 0.05em; }
+
     /* Required field star */
     .required { color: #9b4a2a; font-size: 0.9rem; }
 
@@ -432,7 +455,7 @@
     .poem-card::before { content: '"'; position: absolute; top: 0.2rem; left: 1rem; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.12; line-height: 1; }
     .poem-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(42,31,20,0.1); }
     .poem-card h3 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; color: var(--ink); margin-bottom: 1rem; }
-    .poem-card p { font-style: italic; color: var(--sepia); font-size: 0.95rem; line-height: 2; }
+    .poem-card p { font-style: italic; color: var(--sepia); font-size: 1rem; line-height: 2.1; }
     .poem-tag { display: inline-block; margin-top: 1rem; font-family: 'IM Fell English', serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); border-bottom: 1px solid var(--rust); }
 
     .prose-list { display: flex; flex-direction: column; gap: 2.5rem; }
@@ -987,26 +1010,176 @@
     <h2 class="sec-title">My <em>Poetry</em></h2>
     <div class="ornament"><span></span><i>✦</i><span></span></div>
     <div class="poems-grid">
+
+      <!-- Poem 1 -->
       <div class="poem-card">
-        <h3>The Quiet Hours</h3>
-        <p>Between dusk and dawn<br>the world holds its breath—<br>and I write my name<br>in the margins of light.</p>
-        <span class="poem-tag">Read →</span>
+        <h3>ଫିକା ଫିକା</h3>
+        <p>
+          ତୋ ବିନୁ ଜୀବନ ଫିକା ଫିକା ଲାଗେ<br>
+          ଫିକା ଲାଗେ ମିଠା ସ୍ମୃତି,<br>
+          ଫିକା ଫିକା ଲାଗେ ଜହ୍ନର ଜୋଛନା<br>
+          ଫିକା ଲାଗେ ଗାଢ ରାତି। (୦)
+        </p>
+        <span class="poem-tag read-more-btn" onclick="openPoem('poem1')">Read more →</span>
       </div>
+
+      <!-- Poem 2 -->
       <div class="poem-card">
-        <h3>Letters to Rain</h3>
-        <p>Every drop a syllable,<br>every storm a sentence<br>the sky writes to the earth<br>in its oldest tongue.</p>
-        <span class="poem-tag">Read →</span>
+        <h3>କବିତା</h3>
+        <p>
+          କବିତା ଜଣେ ରାଣୀ<br>
+          କେବେ ସ୍ୱପ୍ନ ରାଇଜର,<br>
+          କେବେ ବାସ୍ତବତା ବଜାରର;<br>
+          କେବେ ସାଜେ ପୁଣି ପାଟରାଣୀ<br>
+          କବି ଭାବନାର,<br>
+          ନିର୍ଝର ସ୍ୟାହିର। (୧)
+        </p>
+        <span class="poem-tag read-more-btn" onclick="openPoem('poem2')">Read more →</span>
       </div>
+
+      <!-- Poem 3 -->
       <div class="poem-card">
-        <h3>Ink & Longing</h3>
-        <p>I pressed a flower<br>between these pages once—<br>now even the absence<br>has a shape.</p>
-        <span class="poem-tag">Read →</span>
+        <h3>କଥା ମୋ ଏତିକି</h3>
+        <p>
+          କଥା ମୋ ଏତିକି ଯିବା ବାଟେ ଥରେ<br>
+          ଚାହିଁବୁ ତୁ ମୁହଁ ଫେରି,<br>
+          ତୋ ସାଥେ ଯିବି ମୁଁ ମେଘ ସବାରୀରେ<br>
+          ସାତ ନଈ ପାର କରି।
+        </p>
+        <span class="poem-tag read-more-btn" onclick="openPoem('poem3')">Read more →</span>
       </div>
+
+      <!-- Poem 4 -->
+      <div class="poem-card">
+        <h3>କଥା ପଦେ</h3>
+        <p>
+          ତୋ ଭିଜା ସପନରେ,<br>
+          ତୋ ହୃଦୟର ଘରେ,<br>
+          ମୋତେ ଟୋପା ଟୋପା ମେଘ କରି ଦେ;<br>
+          ତୋ ନୟନ ପଲକେ,<br>
+          ତୋ ମନର ଆକାଶେ,<br>
+          ମୋତେ ଇନ୍ଦ୍ରଧନୁ କରି ସଜେଇ ଦେ। (୧)
+        </p>
+        <span class="poem-tag read-more-btn" onclick="openPoem('poem4')">Read more →</span>
+      </div>
+
     </div>
   </div>
 </div>
 
-<!-- WHISPERS PROSE -->
+<!-- POEM 1 FULL PAGE -->
+<div class="subpage" id="poem1">
+  <div class="page-inner poem-page">
+    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
+    <p class="sec-label">— Odia Poem</p>
+    <h2 class="sec-title"><em>ଫିକା ଫିକା</em></h2>
+    <div class="ornament"><span></span><i>✦</i><span></span></div>
+    <div class="poem-full-text">
+      <p>
+        ତୋ ବିନୁ ଜୀବନ ଫିକା ଫିକା ଲାଗେ<br>
+        ଫିକା ଲାଗେ ମିଠା ସ୍ମୃତି,<br>
+        ଫିକା ଫିକା ଲାଗେ ଜହ୍ନର ଜୋଛନା<br>
+        ଫିକା ଲାଗେ ଗାଢ ରାତି। (୦)
+      </p>
+      <p>
+        ଲାଜକୁଳୀ ଲତା ଲାଜେଇ ଯାଉନି<br>
+        ବାରମାସ ଛୁଆଁ ପାଇ,<br>
+        ସ୍ୱପ୍ନ ଜଳି ଜଳି ପାଉଁଶ ହେଲାଣି<br>
+        କଣ୍ଟାର ଶେଯରେ ଶୋଇ। (୧)
+      </p>
+      <p>
+        ତୋରି ପ୍ରେମରେ ଦିନ ସରୁ ସରୁ<br>
+        ପାହି ଯାଏ ଏଠି ରାତି।<br>
+        ତୋ ବିନୁ ଜୀବନ....
+      </p>
+      <p>
+        ସୁନ୍ଦର ଦିଶଇ କାଳିମାରେ ଜହ୍ନ<br>
+        ଗୋରା ଦେହେ କଳାଦାଗ,<br>
+        ଡାକି ମୁଁ ଆଣିଲି ଆକାଶୁ ବାଦଲ<br>
+        ସେ ଯେ କଳଙ୍କ ପୋଛିବ। (୨)
+      </p>
+      <p>
+        କଳଙ୍କ ସାଥିରେ ଜହ୍ନ ଲୁଚିଗଲା<br>
+        ହଜିଲା ଜୋଛନା ରାତି।<br>
+        ତୋ ବିନୁ ଜୀବନ....
+      </p>
+    </div>
+    <div class="poem-sig">— Ananya Anuska</div>
+  </div>
+</div>
+
+<!-- POEM 2 FULL PAGE -->
+<div class="subpage" id="poem2">
+  <div class="page-inner poem-page">
+    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
+    <p class="sec-label">— Odia Poem</p>
+    <h2 class="sec-title"><em>କବିତା</em></h2>
+    <div class="ornament"><span></span><i>✦</i><span></span></div>
+    <div class="poem-full-text">
+      <p>
+        କବିତା ଜଣେ ରାଣୀ<br>
+        କେବେ ସ୍ୱପ୍ନ ରାଇଜର,<br>
+        କେବେ ବାସ୍ତବତା ବଜାରର;<br>
+        କେବେ ସାଜେ ପୁଣି ପାଟରାଣୀ<br>
+        କବି ଭାବନାର,<br>
+        ନିର୍ଝର ସ୍ୟାହିର। (୧)
+      </p>
+      <p>
+        କବିତା ଜଣେ ବକ୍ତା<br>
+        କେବେ ପୁଣି ଶ୍ରୋତା<br>
+        କୁହେ ଅନେକ ଅକୁହା କଥା;<br>
+        ମାପିପାରେ ସେ ସାଗରର ଗଭୀରତା,<br>
+        ଛୋଟ ତା' ପଂକ୍ତିରେ ଭାଙ୍ଗିଯାଏ<br>
+        ପର୍ବତର ନୀରବତା। (୨)
+      </p>
+      <p>
+        କବିତା ଜଣେ ପ୍ରେମିକା<br>
+        ବିରହୀ ପ୍ରେମୀର;<br>
+        ଜଣେ ଶିକ୍ଷୟିତ୍ରୀ ମାତା<br>
+        ନିମ୍ନମୁଖୀ ସମାଜର;<br>
+        କେବେ ସାଜେ ପୁଣି ମୁକ ଦର୍ଶକ<br>
+        ସାମାଜିକ ପରିବର୍ତ୍ତନର। (୩)
+      </p>
+    </div>
+    <div class="poem-sig">— Ananya Anuska</div>
+  </div>
+</div>
+<!-- POEM 3 FULL PAGE -->
+<div class="subpage" id="poem3">
+  <div class="page-inner poem-page">
+    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
+    <p class="sec-label">— Odia Poem</p>
+    <h2 class="sec-title"><em>କଥା ମୋ ଏତିକି</em></h2>
+    <div class="ornament"><span></span><i>✦</i><span></span></div>
+    <div class="poem-full-text">
+      <p> କଥା ମୋ ଏତିକି ଯିବା ବାଟେ ଥରେ<br>ଚାହିଁବୁ ତୁ ମୁହଁ ଫେରି,<br>ତୋ ସାଥେ ଯିବି ମୁଁ ମେଘ ସବାରୀରେ<br>ସାତ ନଈ ପାର କରି।</p>
+      <p>ମଉଳିଛି ଧରା ପ୍ରେମ ତା ଅଧୁରା<br>ସୂରୁଜ ବାଟକୁ ଚାହିଁ,<br>ନିତି ପ୍ରତିଶ୍ରୁତି ଫେରି ସେ ଆସିବ<br>ସରସୀରେ ପଦ୍ମ ଉଇଁ। (୧)<br>ଆକାଶରେ ରାତି ପ୍ରତୀକ୍ଷାରେ ପ୍ରୀତି<br>ଜିଉଁଥାଏ ମରି ମରି।<br>କଥା ମୋ ଏତିକି...</p>
+      <p>ନୀଳପଦ୍ମ ଫୁଟେ ହସେ ନୀଳ ଓଠେ<br>ଲୁଚିଯାଏ ଜହ୍ନ ତାରା,<br>କଥା ରଖିବାକୁ ପୁରୁବେ ସୂରୁଜ<br>ହସି ହସି ଚୁମେ ଧରା। (୨)<br>ସେ ଚୁମ୍ବନ ତାଳେ ପକ୍ଷୀ ତରୁ ଡାଳେ<br>ଗାଏ ତା ମନକୁ ହରି।<br>କଥା ମୋ ଏତିକି...</p>
+      <p>ଝଲମଲ କରେ ରକ୍ତିମ ଆଭାରେ<br>ସବୁଜ ରଙ୍ଗିଆ ଶାଢି,<br>ଫୁଲ ଫୁଟି ହସେ ନିର୍ଝରିଣୀ ଝରେ<br>ତୋ ଫେରିବା ଖବର ଶୁଣି। (୩)<br>ନୀରବତା ଭାଙ୍ଗି ଅନ୍ତର ମୋ ହସେ<br>ଆପଣାର ନେବୁ କରି।<br>କଥା ମୋ ଏତିକି...</p>
+    </div>
+    <div class="poem-sig">— Ananya Anuska</div>
+  </div>
+</div>
+
+<!-- POEM 4 FULL PAGE -->
+<div class="subpage" id="poem4">
+  <div class="page-inner poem-page">
+    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
+    <p class="sec-label">— Odia Poem</p>
+    <h2 class="sec-title"><em>କଥା ପଦେ</em></h2>
+    <div class="ornament"><span></span><i>✦</i><span></span></div>
+    <div class="poem-full-text">
+      <p>ତୋ ଭିଜା ସପନରେ,<br>ତୋ ହୃଦୟର ଘରେ,<br>ମୋତେ ଟୋପା ଟୋପା ମେଘ କରି ଦେ;<br>ତୋ ନୟନ ପଲକେ,<br>ତୋ ମନର ଆକାଶେ,<br>ମୋତେ ଇନ୍ଦ୍ରଧନୁ କରି ସଜେଇ ଦେ। (୧)</p>
+      <p>ତୋ ଡାୟାରୀ ପୃଷ୍ଠାରେ,<br>ତୋ ସାଇତା ସ୍ମୃତିରେ,<br>ମୋତେ ଜୀବନ୍ତ କାହାଣୀଟେ କରି ଦେ;<br>ତୋ ହସର ଗାଁଆରେ,<br>ତୋ ଲୁହର ନଈରେ,<br>ତୋ ନାଁ ପାଖେ ମୋ ନାଁ ଲେଖି ଦେ। (୨)</p>
+      <p>ତୋ କବିତା ପଂକ୍ତିରେ,<br>ତୋ କଲମ କାଳିରେ,<br>ମୋତେ ପ୍ରେମର ଶବ୍ଦଟେ କରି ଦେ;<br>ତୋ ଶ୍ୱେତ କାନ୍ଭାସରେ,<br>ତୋ ରଙ୍ଗୀନ ତୂଳୀରେ,<br>ମୋତେ ସାତରଙ୍ଗ କରି ଆଙ୍କି ଦେ। (୩)</p>
+      <p>ତୋ ସମୟ ବେଳାରେ,<br>ତୋ ପାଦ ନକ୍ସା ପାଖେ,<br>ମୋତେ ଶାମୁକାଟେ ପରି ସାଥି କରି ଦେ;<br>ମୁଦ୍ରାଯୁକ୍ତ ନୃତ୍ୟରେ,<br>ତୋ କଣ୍ଠର ସ୍ୱରରେ,<br>ମୋତେ ସଙ୍ଗୀତର ସାତସୁରେ ଗାଇ ଦେ। (୪)</p>
+      <p>ତୋ ଝରକା କଡରେ,<br>ତୋ ଫୁଲ ବଗିଚାରେ,<br>ମୋତେ ଲାଲ୍ ଗୋଲାପଟେ କରି ଦେ;<br>ତୋ କପାଳ ଗାରରେ,<br>ତୋ ପାପୁଲି ରେଖାରେ,<br>ମୋତେ ମୋ ଭାଗ୍ୟ ଲେଖିବାକୁ ଦେ। (୫)</p>
+      <p>ତୋ ଏକଲାପଣରେ,<br>ନିଦଭରା ଆଖିରେ,<br>ମୋତେ ମିଠା ମିଠା ସପନଟେ କରି ଦେ;<br>ତୋ କଅଁଳ ଖରାରେ,<br>ତୋ ଚାନ୍ଦିନୀ ରାତିରେ,<br>ମୋତେ ପୁଣିଥରେ ଜିଇଁବାକୁ ଦେ। (୬)</p>
+    </div>
+    <div class="poem-sig">— Ananya Anuska</div>
+  </div>
+</div>
+
 <div class="subpage" id="whispers-prose">
   <div class="page-inner">
     <button class="back-btn" onclick="showPage('whispers-home')">← Whispers</button>
@@ -1014,17 +1187,8 @@
     <h2 class="sec-title">My <em>Prose</em></h2>
     <div class="ornament"><span></span><i>✦</i><span></span></div>
     <div class="prose-list">
-      <div class="prose-entry">
-        <h3>The Last Letter Never Sent</h3>
-        <p>There are words I have rehearsed in the dark, shaped them until they were smooth as river stones — and then kept them, because some things are too true to release into the world...</p>
-      </div>
-      <div class="prose-entry">
-        <h3>An Afternoon in October</h3>
-        <p>The light came in sideways that afternoon, golden and indifferent, and I sat with my tea going cold and thought about all the things I used to want...</p>
-      </div>
-      <div class="prose-entry">
-        <h3>On the Company of Books</h3>
-        <p>A book is the only guest that arrives exactly when you need it and leaves without being asked. I have always trusted books more than most people...</p>
+      <div class="prose-entry coming-soon-entry">
+        <p class="coming-soon-text">Prose coming soon...</p>
       </div>
     </div>
   </div>
@@ -1038,17 +1202,8 @@
     <h2 class="sec-title">The <em>Archive</em></h2>
     <div class="ornament"><span></span><i>✦</i><span></span></div>
     <div class="blog-list">
-      <div class="blog-entry">
-        <div class="blog-date"><div class="day">12</div><div class="month">Feb</div></div>
-        <div class="blog-content"><h3>On Writing When You Have Nothing to Say</h3><p>Sometimes the blank page is not an enemy — it is an invitation. I've been learning to sit with the silence before the words arrive...</p></div>
-      </div>
-      <div class="blog-entry">
-        <div class="blog-date"><div class="day">28</div><div class="month">Jan</div></div>
-        <div class="blog-content"><h3>Why I Draw What I Cannot Say</h3><p>There are feelings that live beneath language — too tender or too wild to fit inside a sentence. That is where drawing begins for me...</p></div>
-      </div>
-      <div class="blog-entry">
-        <div class="blog-date"><div class="day">05</div><div class="month">Jan</div></div>
-        <div class="blog-content"><h3>The Notebooks I Have Filled</h3><p>I have a shelf of notebooks, each one a season of my life. Some are timid; some are reckless. All of them are honest...</p></div>
+      <div class="blog-entry coming-soon-entry">
+        <p class="coming-soon-text">Archive coming soon...</p>
       </div>
     </div>
   </div>
@@ -1143,6 +1298,10 @@
 </footer>
 
 <script>
+  function openPoem(id) {
+    showPage(id);
+  }
+
   function showPage(id) {
     document.querySelectorAll('.page, .subpage').forEach(el => el.classList.remove('active'));
     const target = document.getElementById(id);
