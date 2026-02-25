@@ -322,6 +322,22 @@
     }
     .back-btn:hover { color: var(--rust); }
 
+    .poem-back-btn {
+      position: fixed;
+      top: 5.5rem; right: 2.5rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'IM Fell English', serif; font-size: 0.78rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--rust);
+      background: transparent;
+      border: 1px solid rgba(155,74,42,0.35);
+      padding: 0.6rem 1.4rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      z-index: 999;
+    }
+    .poem-back-btn:hover { background: rgba(155,74,42,0.08); }
+
     /* CANVAS */
     #canvas-home { background: var(--parchment); }
     .medium-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 1rem; }
@@ -1070,7 +1086,6 @@
 <!-- POEM 1 FULL PAGE -->
 <div class="subpage" id="poem1">
   <div class="page-inner poem-page">
-    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
     <p class="sec-label">— Odia Poem</p>
     <h2 class="sec-title"><em>ଫିକା ଫିକା</em></h2>
     <div class="ornament"><span></span><i>✦</i><span></span></div>
@@ -1111,7 +1126,6 @@
 <!-- POEM 2 FULL PAGE -->
 <div class="subpage" id="poem2">
   <div class="page-inner poem-page">
-    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
     <p class="sec-label">— Odia Poem</p>
     <h2 class="sec-title"><em>କବିତା</em></h2>
     <div class="ornament"><span></span><i>✦</i><span></span></div>
@@ -1147,7 +1161,6 @@
 <!-- POEM 3 FULL PAGE -->
 <div class="subpage" id="poem3">
   <div class="page-inner poem-page">
-    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
     <p class="sec-label">— Odia Poem</p>
     <h2 class="sec-title"><em>କଥା ମୋ ଏତିକି</em></h2>
     <div class="ornament"><span></span><i>✦</i><span></span></div>
@@ -1164,7 +1177,6 @@
 <!-- POEM 4 FULL PAGE -->
 <div class="subpage" id="poem4">
   <div class="page-inner poem-page">
-    <button class="back-btn" onclick="showPage('whispers-poetry')">← Poetry</button>
     <p class="sec-label">— Odia Poem</p>
     <h2 class="sec-title"><em>କଥା ପଦେ</em></h2>
     <div class="ornament"><span></span><i>✦</i><span></span></div>
@@ -1293,6 +1305,9 @@
   <p class="lightbox-title" id="lightbox-title"></p>
 </div>
 
+<!-- GLOBAL POEM BACK BUTTON -->
+<button class="poem-back-btn" id="poem-back-btn" onclick="showPage('whispers-poetry')" style="display:none;">← Back</button>
+
 <footer id="site-footer" style="display:none;">
   <p>© 2025 <em>Ananya Anuska</em> &nbsp;·&nbsp; Crafted with ink & imagination</p>
 </footer>
@@ -1307,6 +1322,9 @@
     const target = document.getElementById(id);
     if (target) { target.classList.add('active'); window.scrollTo(0, 0); }
     document.getElementById('site-footer').style.display = (id === 'contact') ? 'block' : 'none';
+    const poemPages = ['poem1','poem2','poem3','poem4'];
+    const backBtn = document.getElementById('poem-back-btn');
+    if (backBtn) backBtn.style.display = poemPages.includes(id) ? 'inline-flex' : 'none';
   }
 
   function showGateway() { showPage('gateway'); }
